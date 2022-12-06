@@ -6,7 +6,7 @@ import TextField from "@mui/material/TextField";
 export default function BasicTextFields() {
   return (
     <Box component="form" className="form" noValidate autoComplete="off">
-      <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+      <TextField className="OutlinedBasic" label="Outlined" variant="outlined" />
     </Box>
   );
 }

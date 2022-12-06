@@ -1,7 +1,7 @@
 /* css class for local */
 
-.css-1d3z3hw-MuiOutlinedInput-notchedOutline {
-  border-color: #1d72e7 !important;
+.OutlinedBasic fieldset {
+  border-color: blueviolet !important;
   width: 17rem !important;
 }
 
@@ -9,10 +9,6 @@
 
 /* css class in  deploy */
 
-.css-igs3ac {
-  border-color: red !important;
-  width: 17rem !important;
-}
 
 /*-- css class in  deploy */
 
