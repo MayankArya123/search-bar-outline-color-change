@@ -1,7 +1,20 @@
+/* css class for local */
+
 .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
   border-color: #1d72e7 !important;
   width: 17rem !important;
 }
+
+/* --css class for local */
+
+/* css class in  deploy */
+
+.css-igs3ac {
+  border-color: #1d72e7 !important;
+  width: 17rem !important;
+}
+
+/*-- css class in  deploy */
 
 .form {
   display: flex;
