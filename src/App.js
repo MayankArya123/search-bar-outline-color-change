@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from 'react';
+import './App.css'
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 
-function App() {
+export default function BasicTextFields() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box
+      component="form"
+      className='form'
+    
+      noValidate
+      autoComplete="off"
+    >
+      <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+
+    </Box>
   );
 }
-
-export default App;
