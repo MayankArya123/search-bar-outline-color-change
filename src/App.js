@@ -10,26 +10,68 @@ const appContext = React.createContext("");
 
 export default function BasicTextFields() {
 
+
+  const [posts,setposts] = useState([])
+  const [photos,setphotos] = useState([])
+  const [comments,setcomments] = useState([])
+
+
 function getPhotos(){
-     axios('https://jsonplaceholder.typicode.com/photos')
-        .then((response) => { console.log('photos response',response)})
+ return   axios('https://jsonplaceholder.typicode.com/photos')
 }
 function getPosts(){
-     axios('https://jsonplaceholder.typicode.com/posts')
-        .then((response) => { console.log('posts response',response) })
+  return   axios('https://jsonplaceholder.typicode.com/posts')
+
 }
 function getComments(){
-     axios('https://jsonplaceholder.typicode.com/comments')
-        .then((response) => { console.log('comments response',response) })
+   return  axios('https://jsonplaceholder.typicode.com/comments')
+ 
 }
 
 useEffect(() => {
 //all  three request running parallely
-    getPhotos()
-    getPosts()
-    getComments()
+    
+let GetPostsPromise = new Promise(function(resolve, reject) {
+  var  response= getPosts()
+   resolve(response)
+  });
+  
+  // resolve runs the first function in .then
+  GetPostsPromise.then(
+    result =>setposts(result.data) ,// shows "done!" after 1 second
+    error => alert(error) // doesn't run
+  );
+
+
+    let GetPhotosPromise = new Promise(function(resolve, reject) {
+    var  response= getPhotos()
+     resolve(response)
+    });
+    
+    // resolve runs the first function in .then
+    GetPhotosPromise.then(
+      result =>setphotos(result.data) ,// shows "done!" after 1 second
+      error => alert(error) // doesn't run
+    );
+
+    let GetCommentsPromise = new Promise(function(resolve, reject) {
+    var  response= getComments()
+     resolve(response)
+    });
+    
+    // resolve runs the first function in .then
+    GetCommentsPromise.then(
+      result =>setcomments(result.data) ,// shows "done!" after 1 second
+      error => alert(error) // doesn't run
+    );
+
+   
 
 }, []);
+
+console.log('all posts',posts)
+console.log('all photos',photos)
+console.log('all comments',comments)
 
 
   const [color, setColor] = useState(true);
