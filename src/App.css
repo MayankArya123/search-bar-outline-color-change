@@ -40,3 +40,9 @@
   height: 3rem;
   cursor: pointer;
 }
+
+.loader {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
